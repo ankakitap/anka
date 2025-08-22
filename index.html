@@ -8,8 +8,14 @@
     body {
       font-family: 'Comic Sans MS', cursive;
       background-color: #fef6e4;
-      text-align: center;
+      margin: 0;
       padding: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
     }
 
     .logo {
@@ -21,7 +27,7 @@
 
     h1 {
       font-size: 3em;
-      color: red;
+      color: red !important;
       margin-bottom: 20px;
       word-break: break-word;
     }
@@ -34,6 +40,7 @@
       border-radius: 12px;
       cursor: pointer;
       box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+      margin-top: 20px;
     }
 
     button:disabled {
@@ -53,7 +60,6 @@
       color: #d62828;
     }
 
-    /* Mobil uyumlu stiller */
     @media (max-width: 768px) {
       body {
         padding: 20px;
@@ -65,29 +71,38 @@
       }
 
       h1 {
-        font-size: 2em;
-        text-align: center;
+        font-size: 2.2em;
         animation: parla 1s infinite alternate;
+        color: red !important;
+      }
+
+      button {
+        font-size: 1.3em;
+        padding: 12px 24px;
+      }
+
+      #result {
+        font-size: 1.8em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 10px;
+      }
+
+      h1 {
+        font-size: 2em;
+        color: red !important;
       }
 
       button {
         font-size: 1.2em;
         padding: 10px 20px;
       }
-    }
 
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 1.8em;
-      }
-
-      button {
-        font-size: 1em;
-        padding: 8px 16px;
-      }
-
-      body {
-        padding: 10px;
+      #result {
+        font-size: 1.6em;
       }
     }
 
