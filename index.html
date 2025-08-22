@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ✅ 1. Viewport eklendi -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>İNDİRİM ÇARKI</title>
   <style>
     body {
@@ -13,16 +13,18 @@
     }
 
     .logo {
-      width: 500px;
+      width: 100%;
+      max-width: 500px;
+      height: auto;
       image-rendering: auto;
     }
 
     h1 {
-  font-size: 3em;
-  color: red; /* 🔴 Kırmızıya çevrildi */
-  margin-bottom: 20px;
-}
-
+      font-size: 3em;
+      color: red;
+      margin-bottom: 20px;
+      word-break: break-word;
+    }
 
     button {
       font-size: 1.5em;
@@ -51,8 +53,12 @@
       color: #d62828;
     }
 
-    /* ✅ 2. Mobil uyumlu CSS eklendi */
+    /* Mobil uyumlu stiller */
     @media (max-width: 768px) {
+      body {
+        padding: 20px;
+      }
+
       .logo {
         width: 90%;
         max-width: 300px;
@@ -60,33 +66,43 @@
 
       h1 {
         font-size: 2em;
-        color: red; /* isteğe bağlı olarak kırmızı yapıldı */
+        text-align: center;
+        animation: parla 1s infinite alternate;
       }
 
       button {
         font-size: 1.2em;
         padding: 10px 20px;
       }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8em;
+      }
+
+      button {
+        font-size: 1em;
+        padding: 8px 16px;
+      }
 
       body {
-        padding: 20px;
+        padding: 10px;
       }
+    }
+
+    @keyframes parla {
+      from { opacity: 0.6; }
+      to { opacity: 1; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Logo üstte -->
   <img src="logo.png" alt="ANKA KİTAP KIRTASİYE Logosu" class="logo">
-
-  <!-- Başlık -->
   <h1>🎉 İNDİRİM ÇARKI</h1>
-
-  <!-- Buton ve sonuç -->
   <button id="spinButton" onclick="spin()">Çarkı Çevir!</button>
   <div id="result"></div>
-
-  <!-- Müzik -->
   <audio id="bgMusic" src="yerinde-dur-10s.mp3"></audio>
 
   <script>
@@ -162,5 +178,3 @@
 
 </body>
 </html>
-
-
