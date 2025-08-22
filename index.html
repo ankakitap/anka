@@ -2,6 +2,7 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ✅ 1. Viewport eklendi -->
   <title>İNDİRİM ÇARKI</title>
   <style>
     body {
@@ -12,11 +13,9 @@
     }
 
     .logo {
-  width: 500px;
-  image-rendering: auto;
-}
-
-
+      width: 500px;
+      image-rendering: auto;
+    }
 
     h1 {
       font-size: 3em;
@@ -50,6 +49,28 @@
       font-size: 2.5em;
       color: #d62828;
     }
+
+    /* ✅ 2. Mobil uyumlu CSS eklendi */
+    @media (max-width: 768px) {
+      .logo {
+        width: 90%;
+        max-width: 300px;
+      }
+
+      h1 {
+        font-size: 2em;
+        color: red; /* isteğe bağlı olarak kırmızı yapıldı */
+      }
+
+      button {
+        font-size: 1.2em;
+        padding: 10px 20px;
+      }
+
+      body {
+        padding: 20px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -58,7 +79,7 @@
   <img src="logo.png" alt="ANKA KİTAP KIRTASİYE Logosu" class="logo">
 
   <!-- Başlık -->
-  <h1 style="color:#e60000;">🎉 İNDİRİM ÇARKI</h1>
+  <h1>🎉 İNDİRİM ÇARKI</h1>
 
   <!-- Buton ve sonuç -->
   <button id="spinButton" onclick="spin()">Çarkı Çevir!</button>
@@ -140,4 +161,3 @@
 
 </body>
 </html>
-
